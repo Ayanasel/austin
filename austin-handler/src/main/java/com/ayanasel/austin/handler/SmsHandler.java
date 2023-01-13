@@ -2,7 +2,6 @@ package com.ayanasel.austin.handler;
 
 import cn.hutool.core.collection.CollUtil;
 import com.ayanasel.austin.dao.SmsRecordDao;
-import com.ayanasel.austin.domain.MessageTemplate;
 import com.ayanasel.austin.domain.SmsRecord;
 import com.ayanasel.austin.pojo.SmsParam;
 import com.ayanasel.austin.pojo.TaskInfo;
@@ -31,11 +30,12 @@ public class SmsHandler implements Handler {
                 .supplierName("腾讯云通知类消息渠道").build();
         List<SmsRecord> recordList = smsScript.send(smsParam);
 
-        if (CollUtil.isNotEmpty(recordList)) {
-            smsRecordDao.saveAll(recordList);
-            return true;
+        if (CollUtil.isEmpty(recordList)) {
+            return false;
         }
 
-        return false;
+        smsRecordDao.saveAll(recordList);
+        return true;
+
     }
 }
