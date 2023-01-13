@@ -10,6 +10,10 @@
     <version>1.0</version>
     <modules>
         <module>austin-web</module>
+        <module>austin-support</module>
+        <module>austin-service-api</module>
+        <module>austin-service-api-impl</module>
+        <module>austin-common</module>
     </modules>
 
     <parent>
