@@ -24,13 +24,19 @@ public class AustinApplication {
         SpringApplication.run(AustinApplication.class,args);
     }
 
-    @GetMapping("/hello")
-    public String hello() {
+    /**
+     *
+     * @param phone 手机号
+     * @param content 模板占位符的参数值
+     * @return
+     */
+    @GetMapping("/sendSms")
+    public String sendSms(String phone,String content) {
 
         SmsParam smsParam = SmsParam.builder()
                 // 填入目标手机号（即接收方）
-                .phones(new HashSet<>(Arrays.asList("//")))
-                .content("3333")
+                .phones(new HashSet<>(Arrays.asList(phone)))
+                .content(content)
                 .build();
 
         return tencentSmsScript.send(smsParam);
