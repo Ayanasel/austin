@@ -2,7 +2,7 @@ package com.ayanasel.austin.controller;
 
 import com.ayanasel.austin.handler.SmsHandler;
 import com.ayanasel.austin.pojo.TaskInfo;
-import com.ayanasel.austin.pojo.vo.BasicResultVO;
+import com.ayanasel.austin.vo.BasicResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -11,5 +11,13 @@
 
     <artifactId>austin-service-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.ayanasel</groupId>
+            <artifactId>austin-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

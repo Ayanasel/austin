@@ -25,4 +25,17 @@ spring:
     password:
     driver-class-name:
 
+# kafka相关的信息配置 TODO
+  kafka:
+    bootstrap-servers:
+    producer:
+      key-serializer:
+      value-serializer:
+    consumer:
+      key-deserializer:
+      value-deserializer:
+      auto:
+        offset:
+          reset:
+
 # tomcat / HikariPool(数据库连接池 配置） TODO
